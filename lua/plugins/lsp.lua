@@ -6,9 +6,9 @@ return {
         "AstroNvim/astrolsp",
         opts = {
           handlers = {
-            zls = function() end
-          }
-        }
+            zls = function() end,
+          },
+        },
       },
       {
         "williamboman/mason-lspconfig.nvim",
@@ -20,9 +20,10 @@ return {
             "lua_ls",
             "zls",
             "pylyzer",
-          }
+          },
         },
         config = function(_, opts)
+          require("mason").setup()
           require("astrolsp.mason-lspconfig").register_servers()
           require("mason-lspconfig").setup(opts)
         end,
@@ -32,32 +33,32 @@ return {
   },
 
   {
-    "mason-org/mason.nvim",
-    opts = {},
-  },
-
-  "WhoIsSethDaniel/mason-tool-installer.nvim",
-
-  {
     "jay-babu/mason-null-ls.nvim",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
-      {
-        "nvimtools/none-ls.nvim",
-        opts = function()
-          return {
-            on_attach = require("astrolsp").on_attach,
-            automatic_installation = true,
-            ensure_installed = {
-              "stylua",
-              "selene",
-              "prettier",
-              "clang-format",
-            }
-          }
-        end,
-      },
+      "mason-org/mason.nvim",
+      "WhoIsSethDaniel/mason-tool-installer.nvim",
+      "nvimtools/none-ls.nvim",
     },
+
+    config = function()
+      require("mason").setup()
+      require("mason-null-ls").setup {
+        ensure_installed = {
+          "stylua",
+          "selene",
+          "prettier",
+          "clang_format"
+        },
+        automatic_installation = false,
+        handlers = {},
+      }
+      require("null-ls").setup {
+        sources = {
+          -- Anything not supported by mason.
+        },
+      }
+    end,
   },
 
   {
@@ -70,5 +71,5 @@ return {
         { path = "${3rd}/luv/library", words = { "vim%.uv" } },
       },
     },
-  }
+  },
 }
