@@ -113,5 +113,27 @@ vim.api.nvim_set_keymap('n', '<leader>du', '<cmd>lua require("dapui").toggle()<C
 vim.api.nvim_set_keymap('n', '<leader>dh', '<cmd>lua require("dap.ui.widgets").hover()<CR>',
   { noremap = true, silent = true, desc = "Debugger Hover" })
 
-vim.api.nvim_set_keymap('n', '<leader>de', '<cmd>luarequire("dapui").eval()<CR>',
-  { noremap = true, silent = true, desc = "Toggle DAP UI" })
+vim.api.nvim_set_keymap('n', '<leader>de', '<cmd>lua require("dapui").eval()<CR>',
+  { noremap = true, silent = true, desc = "Evaluate Expression" })
+
+-- Terminal
+
+wk.add({
+  { "<Leader>t", group = "Terminal", icon = { icon = '' } }
+})
+
+vim.api.nvim_set_keymap('n', '<leader>tt', '<cmd>ToggleTerm size=20 dir=' .. vim.fn.getcwd() .. ' <CR>',
+  { noremap = true, silent = true, desc = "Open Terminal" })
+
+vim.api.nvim_set_keymap('n', '<leader>tm', '<Nop>',
+  { noremap = true, silent = true, desc = "Run Makefile", callback = function ()
+    local cwd = vim.fn.getcwd()
+    if vim.fn.filereadable(cwd .. "/Makefile") == 0 then
+      vim.notify("No Makefile found in the cwd.", vim.log.levels.ERROR)
+      return
+    end
+
+    vim.cmd('TermExec cmd="make" direction=float dir=' .. cwd)
+  end })
+
+vim.api.nvim_set_keymap(  't'  ,  '<Leader><ESC>'  ,  '<C-\\><C-n>'  ,  {noremap = true}  )
