@@ -1,7 +1,7 @@
 return {
   "rebelot/kanagawa.nvim",
-  priority = 100000,
-  lazy = false,
+  -- priority = 100000,
+  -- lazy = false,
   opts = {
     commentStyle = {
       italic = false,
@@ -33,10 +33,16 @@ return {
   },
 
   {
+    "RRethy/base16-nvim",
+    priority = 10000,
+    lazy = false,
+  },
+
+  {
     "everviolet/nvim",
     name = "evergarden.nvim",
-    priority = 100000,
-    lazy = false,
+    -- priority = 100000,
+    -- lazy = false,
   },
 
   {

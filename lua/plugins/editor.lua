@@ -6,13 +6,13 @@ return {
     ---@module "ibl"
     ---@type ibl.config
     opts = {
-      scope = { enabled = true }
+      scope = { enabled = true },
     },
   },
 
   {
     "kevinhwang91/nvim-ufo",
-    event = "BufReadPre"
+    event = "BufReadPre",
   },
 
   {
@@ -73,7 +73,7 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
-    branch = 'master',
+    branch = "master",
     lazy = false,
     build = ":TSUpdate",
     opts = {
@@ -90,37 +90,37 @@ return {
         "asm",
         "kotlin",
         "zig",
-      }
-    }
+      },
+    },
   },
 
   {
-    "nvim-treesitter/nvim-treesitter-textobjects"
+    "nvim-treesitter/nvim-treesitter-textobjects",
   },
 
   {
     "NMAC427/guess-indent.nvim",
-    event = "BufEnter"
+    event = "BufEnter",
   },
 
   {
-    'echasnovski/mini.pairs',
-    version = false
+    "echasnovski/mini.pairs",
+    version = false,
   },
 
   {
-    'echasnovski/mini.comment',
+    "echasnovski/mini.comment",
     version = false,
     opts = {
       mappings = {
         comment_line = ";",
         comment_visual = ";",
-      }
-    }
+      },
+    },
   },
 
   {
-    'echasnovski/mini.surround',
+    "echasnovski/mini.surround",
     version = false,
   },
 
@@ -150,27 +150,26 @@ return {
 
             never_show = { ".git", "sourcemap.json" },
           },
-        }
-        ,
+        },
         source_selector = {
           winbar = true,
-          statusline = true
+          statusline = true,
         },
 
         default_component_configs = {
           indent = {
             padding = 0,
           },
-          modified = { symbol = '' },
+          modified = { symbol = "" },
           git_status = {
             symbols = {
               added = "",
               deleted = "",
-              modified = '',
+              modified = "",
               renamed = "",
-              untracked = '',
+              untracked = "",
               ignored = "",
-              conflict = '󰘞',
+              conflict = "󰘞",
             },
           },
         },
@@ -230,7 +229,7 @@ return {
               end,
             },
           },
-        }
+        },
       }
     end,
   },

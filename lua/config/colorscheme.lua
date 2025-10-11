@@ -5,7 +5,7 @@ local function apply_scheme(colorscheme)
 end
 
 -- first scheme is the main one, others are backups
-local schemes = { "voblue", "imperial", "evergarden-fall", "kanagawa-dragon", "slate" }
+local schemes = { "base16-darkmoss", "evergarden-fall", "kanagawa-dragon", "slate" }
 
 for _, scheme in pairs(schemes) do
   if not apply_scheme(scheme) then

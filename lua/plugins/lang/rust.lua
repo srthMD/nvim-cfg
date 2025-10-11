@@ -1,14 +1,13 @@
 return {
   {
-    'vxpm/ferris.nvim',
+    "vxpm/ferris.nvim",
     ft = "rs",
   },
 
   {
     "Saecki/crates.nvim",
-    tag = 'stable',
-    config = function()
-      require('crates').setup()
-    end,
-  }
+    tag = "stable",
+    ft = "toml",
+    config = function() require("crates").setup() end,
+  },
 }
