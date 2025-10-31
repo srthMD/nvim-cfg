@@ -1,7 +1,6 @@
 return {
   "rebelot/kanagawa.nvim",
-  -- priority = 100000,
-  -- lazy = false,
+  event = "VeryLazy",
   opts = {
     commentStyle = {
       italic = false,
@@ -41,15 +40,16 @@ return {
   {
     "everviolet/nvim",
     name = "evergarden.nvim",
-    -- priority = 100000,
-    -- lazy = false,
+    event = "VeryLazy",
   },
 
   {
-    "kamil-koziol/imperial.nvim"
+    "kamil-koziol/imperial.nvim",
+    event = "VeryLazy",
   },
 
   {
-    'marfisc/vorange'
+    "marfisc/vorange",
+    event = "VeryLazy",
   },
 }

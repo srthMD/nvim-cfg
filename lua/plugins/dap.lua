@@ -1,7 +1,7 @@
 return {
   {
     "mfussenegger/nvim-dap",
-    lazy = true,
+    event = "VeryLazy",
     dependencies = {
       {
         "jay-babu/mason-nvim-dap.nvim",
@@ -20,6 +20,7 @@ return {
 
   {
     "rcarriga/nvim-dap-ui",
+    keys = "<Leader>du",
     dependencies = { { "nvim-neotest/nvim-nio", lazy = true } },
     opts = { floating = { border = "rounded" } },
   }
