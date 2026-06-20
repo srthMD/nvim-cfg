@@ -4,13 +4,16 @@ local function apply_scheme(colorscheme)
   return suc
 end
 
--- first scheme is the main one, others are backups
-local schemes = { "base16-darkmoss", "evergarden-fall", "kanagawa-dragon", "slate" }
+local main_scheme = "vorange"
+local backup_schemes = { "base16-darkmoss", "evergarden-fall", "kanagawa-dragon", "slate" }
 
-for _, scheme in pairs(schemes) do
-  if not apply_scheme(scheme) then
-    vim.notify("Failed to apply color scheme " .. scheme)
-  else
-    break
+if not apply_scheme(main_scheme) then
+  for _, scheme in pairs(backup_schemes) do
+    if not apply_scheme(scheme) then
+      vim.notify("Failed to apply color scheme " .. scheme)
+    else  
+      vim.notify("Falling back to colorscheme " .. scheme .. ", failed to apply " .. main_scheme)
+      break
+    end
   end
 end
