@@ -24,8 +24,9 @@ return {
         },
         config = function(_, opts)
           require("mason").setup()
-          require("astrolsp.mason-lspconfig").register_servers()
           require("mason-lspconfig").setup(opts)
+          -- i dont even fucking know anymore honestly
+          -- require("astrolsp.mason-lspconfig").register_servers()
         end,
       },
     },
