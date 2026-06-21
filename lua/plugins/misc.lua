@@ -10,7 +10,8 @@ return {
       display = {
         theme = "atom"
       },
-    }
+    },
+    enabled = false,
   },
 
   {

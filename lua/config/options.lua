@@ -11,19 +11,20 @@ vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 
-vim.diagnostic.config({
-  virtual_lines = false,
-  virtual_text = false,
-  underline = true,
 
-  signs = {
-    text = {
-      [vim.diagnostic.severity.ERROR] = '',
-      [vim.diagnostic.severity.WARN] = '',
-      [vim.diagnostic.severity.INFO] = '',
-      [vim.diagnostic.severity.HINT] = '󰌵',
-    },
-  }
+vim.diagnostic.config({
+ virtual_lines = false,
+ virtual_text = false,
+ underline = true,
+
+ signs = {
+   text = {
+     [vim.diagnostic.severity.ERROR] = '',
+     [vim.diagnostic.severity.WARN] = '',
+     [vim.diagnostic.severity.INFO] = '',
+     [vim.diagnostic.severity.HINT] = '󰌵',
+   },
+ }
 })
 
 vim.opt.laststatus = 3
