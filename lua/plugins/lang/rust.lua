@@ -1,7 +1,11 @@
 return {
   {
     "vxpm/ferris.nvim",
-    ft = "rs",
+    ft = "rust",
+    opts = {
+      create_commands = true,
+      url_handler = "xdg-open",
+    },
   },
 
   {

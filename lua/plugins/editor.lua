@@ -73,7 +73,8 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
-    branch = "master",
+    branch = "main",
+    main = "nvim-treesitter.config",
     lazy = false,
     build = ":TSUpdate",
     opts = {
