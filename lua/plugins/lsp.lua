@@ -49,7 +49,7 @@ return {
           "stylua",
           "selene",
           "prettier",
-          "clang_format"
+          "clang_format",
         },
         automatic_installation = false,
         handlers = {},
@@ -72,5 +72,24 @@ return {
         { path = "${3rd}/luv/library", words = { "vim%.uv" } },
       },
     },
+  },
+
+  {
+    "oribarilan/lensline.nvim",
+    event = "LspAttach",
+    config = function()
+      vim.lsp.codelens.enable(false)
+      require("lensline").setup {
+        profiles = {
+          {
+            name = "minimal",
+            style = {
+              placement = "inline",
+              render = "focused",
+            },
+          },
+        },
+      }
+    end,
   },
 }
