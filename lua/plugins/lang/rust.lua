@@ -1,11 +1,8 @@
 return {
   {
-    "vxpm/ferris.nvim",
-    ft = "rust",
-    opts = {
-      create_commands = true,
-      url_handler = "xdg-open",
-    },
+    "mrcjkb/rustaceanvim",
+    version = "^9",
+    lazy = false,
   },
 
   {
