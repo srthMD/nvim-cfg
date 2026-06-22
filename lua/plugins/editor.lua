@@ -107,6 +107,7 @@ return {
   {
     "echasnovski/mini.pairs",
     version = false,
+    config = function() require("mini.pairs").setup {} end,
   },
 
   {
@@ -123,6 +124,21 @@ return {
   {
     "echasnovski/mini.surround",
     version = false,
+    config = function()
+      require("mini.surround").setup {
+        mappings = {
+          add = "ys",
+          delete = "ds",
+          replace = "rs",
+          find = "",
+          find_left = "",
+          highlight = "",
+          update_n_lines = "",
+          suffix_next = "",
+          suffix_last = "",
+        },
+      }
+    end,
   },
 
   {
