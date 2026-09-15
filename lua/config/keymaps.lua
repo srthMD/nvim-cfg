@@ -138,6 +138,8 @@ vim.api.nvim_set_keymap('n', '<leader>tm', '<Nop>',
 
 vim.api.nvim_set_keymap(  't'  ,  '<Leader><ESC>'  ,  '<C-\\><C-n>'  ,  {noremap = true}  )
 
+-- Buffers
+
 local TablinePicker = {
     condition = function(self)
         return self._show_picker
@@ -183,4 +185,26 @@ end,
 )
 wk.add({
   { "<Leader>bp", icon = { icon = '' }, desc = "Pick Buffer" }
+})
+
+vim.keymap.set("n", "<Leader>bD", function()
+    local tabline = require("heirline").tabline
+    local buflist = tabline._buflist[1]
+    buflist._picker_labels = {}
+    buflist._show_picker = true
+    vim.cmd.redrawtabline()
+    local char = vim.fn.getcharstr()
+    local bufnr = buflist._picker_labels[char]
+    if bufnr then
+        vim.api.nvim_buf_delete(bufnr, {unload = true})
+    end
+    buflist._show_picker = false
+    vim.cmd.redrawtabline()
+end,
+  {
+    desc = "Pick Delete Buffer"
+  }
+)
+wk.add({
+  { "<Leader>bD", icon = { icon = '' }, desc = "Pick Delete Buffer" }
 })
