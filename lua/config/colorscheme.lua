@@ -4,8 +4,8 @@ local function apply_scheme(colorscheme)
   return suc
 end
 
-local main_scheme = "vorange"
-local backup_schemes = { "base16-darkmoss", "evergarden-fall", "kanagawa-dragon", "slate" }
+local main_scheme = "imperial"
+local backup_schemes = { "base16-tender", "evergarden-fall", "kanagawa-dragon", "slate" }
 
 if not apply_scheme(main_scheme) then
   for _, scheme in pairs(backup_schemes) do

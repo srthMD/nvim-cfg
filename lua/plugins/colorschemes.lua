@@ -47,9 +47,4 @@ return {
     "kamil-koziol/imperial.nvim",
     event = "VeryLazy",
   },
-
-  {
-    "marfisc/vorange",
-    event = "VeryLazy",
-  },
 }
